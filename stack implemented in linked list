@@ -52,11 +52,11 @@ bool isValid(char* s) {
                 return false;
             }
 
-            char opening = pop(&stack);
+            char top = pop(&stack);
 
-            if ((c == ')' && opening != '(') ||
-                (c == '}' && opening != '{') ||
-                (c == ']' && opening != '[')) {
+            if ((c == ')' && top != '(') ||
+                (c == '}' && top != '{') ||
+                (c == ']' && top != '[')) {
                 return false;
             }
         }
