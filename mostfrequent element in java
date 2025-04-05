@@ -1,0 +1,37 @@
+import java.util.*;
+public class Main{
+    public static void main(String args[]){
+        Scanner sc=new Scanner(System.in);
+        int n=sc.nextInt();
+        if(n<0){
+            System.out.println("Invalid");
+            return;
+        }
+        int[] list=new int[n];
+        for(int i=0;i<n;i++){
+            list[i]=sc.nextInt();
+        }
+        if(n==1){
+            System.out.println("The most ferquent element:"+list[0]);
+            return;
+        }
+        int mostfeq=list[0];
+        int maxcount=1;
+        for(int i=0;i<n;i++){
+            int curele=list[i];
+            int curcount=0;
+            for(int j=0;j<n;j++){
+                if(list[j]==curele){
+                    curcount++;
+                }
+            }
+            if(curcount>maxcount){
+                maxcount=curcount;
+                mostfeq=curele;
+            }
+        }
+        System.out.println("The most fequent element :"+mostfeq);
+        System.out.println("No of Count:"+maxcount);
+        sc.close();
+    }
+}
